@@ -24,7 +24,6 @@ function goUp() {
     }, 40);
 }
 
-
 document.addEventListener("keyup", function(e) {
     console.log(e.key, hero);
     switch (e.key) {
@@ -33,5 +32,15 @@ document.addEventListener("keyup", function(e) {
             console.log("hi");
             goUp();
         break                
-        }
+        };
     });
+
+let life = setInterval(function(){
+    let heroBottom = parseInt(window.getComputedStyle(hero).getPropertyValue("bottom"));
+    let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue("left"));
+
+    if (enemyLeft < 160 && enemyLeft > 60 && heroBottom >= 50) {
+        enemy.style.animation= "none";
+        alert("You lose!");
+    };
+}, 10);

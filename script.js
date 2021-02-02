@@ -3,12 +3,13 @@ let counter = 0;
 let bottom = 0;
 
 function goUp() {
+    counter = 0;
     let timer = setInterval(function() {
         counter++
         bottom += 10;
             if (counter == 10) {
             clearInterval(timer)
-        
+                   
         let timerDown = setInterval(function() {
             if (bottom == 0) 
                 {clearInterval(timerDown)

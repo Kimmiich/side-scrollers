@@ -39,7 +39,7 @@ let life = setInterval(function(){
     let heroBottom = parseInt(window.getComputedStyle(hero).getPropertyValue("bottom"));
     let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue("left"));
 
-    if (enemyLeft < 160 && enemyLeft > 60 && heroBottom >= 50) {
+    if (enemyLeft < 160 && enemyLeft > 60 && heroBottom <  50) {
         enemy.style.animation= "none";
         alert("You lose!");
     };

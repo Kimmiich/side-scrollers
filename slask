@@ -8,10 +8,11 @@
 
 3. enemy kommer rörande mot hero 
 4. hoppar för att rädda, misslyckas den så är det game over
+5. adding a scoring board
 
 ******* Design *******
-5. bakgrund i den stora div:en "container"
-6. ljudeffekt för hopp, springande eller kollidering 
+6. bakgrund i den stora div:en "container"
+7. ljudeffekt för hopp, springande eller kollidering 
 
 !!!! Att tänka på!!!!
 !Kommentarer på vår kod

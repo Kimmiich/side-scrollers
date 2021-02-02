@@ -3,7 +3,7 @@ let enemy = document.getElementById("enemy");
 let counter = 0;
 let bottom = 0;
 
-function goUp() {
+function goUp() { //Jannes kod, jumping function for the hero
     counter = 0;
     let timer = setInterval(function() {
         counter++
@@ -24,7 +24,7 @@ function goUp() {
     }, 40);
 }
 
-document.addEventListener("keyup", function(e) {
+document.addEventListener("keyup", function(e) { //only one key (ArrowUp) is needed for this game
     console.log(e.key, hero);
     switch (e.key) {
         case "ArrowUp":
@@ -35,11 +35,11 @@ document.addEventListener("keyup", function(e) {
         };
     });
 
-let life = setInterval(function(){
-    let heroBottom = parseInt(window.getComputedStyle(hero).getPropertyValue("bottom"));
-    let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue("left"));
+let life = setInterval(function(){ //we set of 10 sec, where we check the position of both blocks and if the collide we set game to be over
+    let heroBottom = parseInt(window.getComputedStyle(hero).getPropertyValue("bottom")); //getComputedStyle - taking all css propeties for hero, with getPropertyValue we are specifically taking the value of "bottom".
+    let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue("left")); //getComputedStyle - taking all css propeties for enemy, with getPropertyValue we are specifically taking the value of "left".
 
-    if (enemyLeft < 160 && enemyLeft > 60 && heroBottom <  50) {
+    if (enemyLeft < 160 && enemyLeft > 60 && heroBottom <  50) { //condition for checking the collision
         enemy.style.animation= "none";
         alert("You lose!");
     };

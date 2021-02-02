@@ -1,0 +1,26 @@
+#box {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 0px;
+    }
+
+    .startBox {
+        background-color: chartreuse;
+    }
+
+    .keyUp {
+        background-color: brown;
+    }
+
+    .keyDown {
+        background-color: purple;
+    }
+
+    .keyLeft {
+        background-color: orange;
+    }
+
+    .keyRight {
+        background-color: blue;
+    }

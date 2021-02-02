@@ -1,0 +1,18 @@
+1. en box för hela ramen
+2. inne i den stora boxen så har vi två små boxar, ena som hoppar och den andra som attackerar
+
+<div id="container">
+    <div id ="hero">
+    <div id ="enemy">
+</div>
+
+3. enemy kommer rörande mot hero 
+4. hoppar för att rädda, misslyckas den så är det game over
+
+******* Design *******
+5. bakgrund i den stora div:en "container"
+6. ljudeffekt för hopp, springande eller kollidering 
+
+!!!! Att tänka på!!!!
+!Kommentarer på vår kod
+!Engelska i namngivning 

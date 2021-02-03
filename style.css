@@ -1,23 +1,38 @@
 #hero {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    bottom: 0px;
-    left: 60px;
-    background-color: chartreuse;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 0px;
+  left: 60px;
+  background-color: chartreuse;
 }
 
 #enemy {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    background-color: coral;
-    animation: move 3s infinite linear;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: coral;
+  animation: move 3s infinite linear;
+}
+
+.lifeValue {
+  width: 50px;
+  font-size: 30px;
+  color: block;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid black;
+  text-align: center;
 }
 
 @keyframes move {
-    0% {right: 0px;}
-    100% {right: 100vw;}
+  0% {
+    right: 0px;
+  }
+  100% {
+    right: 100vw;
+  }
 }

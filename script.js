@@ -100,8 +100,8 @@ let lose = setInterval(function () {
   ); //getComputedStyle - taking all css propeties for hero, with getPropertyValue we are specifically taking the value of "bottom".
   let enemyLeft = parseInt(
     window.getComputedStyle(enemy).getPropertyValue("left")
-
-  ); //getComputedStyle - taking all css propeties for enemy, with getPropertyValue we are specifically taking the value of "left".
+  );
+  //getComputedStyle - taking all css propeties for enemy, with getPropertyValue we are specifically taking the value of "left".
  
   if (enemyLeft < 160 && enemyLeft > 60 && heroBottom < 50) {
      life--; 
@@ -117,16 +117,21 @@ let lose = setInterval(function () {
   
     enemy.style.animation = "none";
     hero.style.animation = "none"; 
+    
+    
     alert("you lose");
     pauseAudio();
     gameOverAudio();
     
+   
     loserText.innerHTML ="GAME OVER!";
+    
+    
     
 }
 
 }
-else if ( enemyLeft < 0){
+else if (  enemyLeft<=0  ){
   score++
     scoreValue.innerHTML = score; 
   
@@ -138,7 +143,7 @@ else if ( enemyLeft < 0){
    
 }, 40);
 console.log(lose)
-function gameOverAdio(){
+function gameOverAudio(){
   document.getElementById("gameover").play();
 }
 function pauseAudio() {

@@ -2,7 +2,8 @@ let hero = document.getElementById("hero");
 let enemy = document.getElementById("enemy");
 const loserText = document.getElementById("loserText");
 const lifeValue = document.querySelector(".lifeValue");
-
+const scoreValue = document.querySelector(".scoreValue");
+//let scoreValue = document.getElementById("scoreValue");
 let counter = 0;
 let bottom = 0;
 let score = 0;
@@ -48,7 +49,7 @@ function goUp() {
     }
     //console.log("Hej!" + counter);
     hero.style.bottom = bottom + "px";
-    console.log(hero.style.bottom);
+    //console.log(hero.style.bottom);
   }, 40);
 }
 
@@ -89,6 +90,7 @@ document.addEventListener("keyup", function (e) {
 });
 
 let lose = setInterval(function () {
+ 
   //we set of 10 sec, where we check the position of both blocks and if the collide we set game to be over
   let heroBottom = parseInt(
     window.getComputedStyle(hero).getPropertyValue("bottom")
@@ -114,15 +116,27 @@ let lose = setInterval(function () {
     loserText.innerHTML ="GAME OVER!";
     
 }
+
 }
+else if ( enemyLeft < 0){
+  score++
+    scoreValue.innerHTML = score; 
+  
+
+
+}
+
+
     //    else {
-    //         score++                (another piece of code for attemps of counting score)
+    //                         (another piece of code for attemps of counting score)
     //         console.log(score);
     //     };
   
 }, 40);
+console.log(lose)
+//console.log(!lose)
 
-console.log("life");
+
 
 // knapp som sätter igång animationen
 

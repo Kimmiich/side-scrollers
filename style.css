@@ -35,6 +35,21 @@
   color: red;
 
 }
+.scoreValue{
+  width: 50px;
+  font-size: 30px;
+  color: block;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 1rem;
+  position: absolute;
+  right:20px;
+  top:20px;
+  color: red;
+}
 @keyframes move {
   0% {
     right: 0px;

@@ -1,5 +1,6 @@
 let hero = document.getElementById("hero");
 let enemy = document.getElementById("enemy");
+const loserText = document.getElementById("loserText");
 const lifeValue = document.querySelector(".lifeValue");
 
 let counter = 0;
@@ -36,6 +37,21 @@ function goUp() {
   }, 40);
 }
 
+// function moveLeft() { //Made moving block in js
+//   // const newEnemy = document.getElementById("enemy");
+//   let pos = 0;
+//   let id = setInterval(frame, 1);
+//   function frame() {
+//     if(pos == 2000) {
+//       clearInterval(id);
+//   } else {
+//     pos++;
+//     enemy.style.right = pos + "px";
+//   }
+//   }
+// }
+// moveLeft();
+
 document.addEventListener("keyup", function (e) {
   //only one key (ArrowUp) is needed for this game
   console.log(e.key, hero);
@@ -50,6 +66,8 @@ document.addEventListener("keyup", function (e) {
       }
       break;
     case "Space":
+      moveLeft();
+      break;   
   }
 });
 
@@ -65,15 +83,15 @@ let lose = setInterval(function () {
     //condition for checking the collision
     life--;
     console.log(life);
-    lifeValue.innerHTML = life;
-    // enemy.style.animation = "block";
+    lifeValue.innerHTML = life; 
+    //enemy.style.animation = "block";
     enemy.style.animation = "none";
     if (life == 0) {
       //(code not working for counting life)
 
       //enemy.style.animation = "none";
       //hero.style.animation = "none"; not needed?
-      alert("You lose!");
+      loserText.innerHTML ="You lose!";
     }
 
     //    else {

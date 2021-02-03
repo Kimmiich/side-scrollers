@@ -27,7 +27,14 @@
   border: 2px solid black;
   text-align: center;
 }
+#loserText{
+  font-size: 5rem;
+  position: absolute;
+  left:500px;
+  top:400px;
+  color: red;
 
+}
 @keyframes move {
   0% {
     right: 0px;

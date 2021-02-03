@@ -95,27 +95,31 @@ let lose = setInterval(function () {
   ); //getComputedStyle - taking all css propeties for hero, with getPropertyValue we are specifically taking the value of "bottom".
   let enemyLeft = parseInt(
     window.getComputedStyle(enemy).getPropertyValue("left")
+
   ); //getComputedStyle - taking all css propeties for enemy, with getPropertyValue we are specifically taking the value of "left".
+ 
   if (enemyLeft < 160 && enemyLeft > 60 && heroBottom < 50) {
+     life--; 
     //condition for checking the collision
-    life--;
+    alert("you loses one life ,Now your life is : "+ life );
     console.log(life);
     lifeValue.innerHTML = life; 
-    //enemy.style.animation = "block";
+  
+ 
+ if (life == 0) {
+  
     enemy.style.animation = "none";
-    if (life == 0) {
-      //(code not working for counting life)
-
-      //enemy.style.animation = "none";
-      //hero.style.animation = "none"; not needed?
-      loserText.innerHTML ="You lose!";
-    }
-
+    hero.style.animation = "none"; 
+    alert("you lose");
+    loserText.innerHTML ="GAME OVER!";
+    
+}
+}
     //    else {
     //         score++                (another piece of code for attemps of counting score)
     //         console.log(score);
     //     };
-  }
+  
 }, 40);
 
 console.log("life");

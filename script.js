@@ -1,5 +1,8 @@
 let hero = document.getElementById("hero");
 let enemy = document.getElementById("enemy");
+window.onload=function(){
+  document.getElementById("overWorld").play();
+}
 const loserText = document.getElementById("loserText");
 const lifeValue = document.querySelector(".lifeValue");
 const scoreValue = document.querySelector(".scoreValue");
@@ -103,7 +106,9 @@ let lose = setInterval(function () {
   if (enemyLeft < 160 && enemyLeft > 60 && heroBottom < 50) {
      life--; 
     //condition for checking the collision
+    
     alert("you loses one life ,Now your life is : "+ life );
+    
     console.log(life);
     lifeValue.innerHTML = life; 
   
@@ -113,6 +118,9 @@ let lose = setInterval(function () {
     enemy.style.animation = "none";
     hero.style.animation = "none"; 
     alert("you lose");
+    pauseAudio();
+    gameOverAudio();
+    
     loserText.innerHTML ="GAME OVER!";
     
 }
@@ -127,17 +135,12 @@ else if ( enemyLeft < 0){
 }
 
 
-    //    else {
-    //                         (another piece of code for attemps of counting score)
-    //         console.log(score);
-    //     };
-  
+   
 }, 40);
 console.log(lose)
-//console.log(!lose)
-
-
-
-// knapp som sätter igång animationen
-
-//startButtom
+function gameOverAdio(){
+  document.getElementById("gameover").play();
+}
+function pauseAudio() {
+  document.getElementById("overWorld").pause();
+}

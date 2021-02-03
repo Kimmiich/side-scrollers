@@ -15,18 +15,21 @@ function goUp() { //Janne's code, jumping function for the hero
             
         if (counter == 13) {
             clearInterval(timer)
-                   
+            counter = 10;
             let timerDown = setInterval(function() {
-                if (bottom == 0) {
-                        clearInterval(timerDown)
-                        isJumping = false;
-                }
+                counter--;
                 bottom -= 13;
+                if (counter == 0) {
+                    clearInterval(timerDown)
+                    isJumping = false;
+                }
                 hero.style.bottom = bottom + "px";
+                console.log(hero.style.bottom);
             }, 40);
         }
         //console.log("Hej!" + counter);
         hero.style.bottom = bottom + "px";
+        console.log(hero.style.bottom);
     }, 40);
 }
 

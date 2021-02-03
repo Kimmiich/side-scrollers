@@ -5,21 +5,25 @@ let bottom = 0;
 let score = 0;
 let life = 3;
 
+let isJumping = false; // To only jump once.
+
 function goUp() { //Janne's code, jumping function for the hero
     counter = 0;
     let timer = setInterval(function() {
         counter++
         bottom += 10;
-            if (counter == 13) {
+            
+        if (counter == 13) {
             clearInterval(timer)
                    
-        let timerDown = setInterval(function() {
-            if (bottom == 0) 
-                {clearInterval(timerDown)
-            }
-        bottom -= 13;
-        hero.style.bottom = bottom + "px";
-        }, 40);
+            let timerDown = setInterval(function() {
+                if (bottom == 0) {
+                        clearInterval(timerDown)
+                        isJumping = false;
+                }
+                bottom -= 13;
+                hero.style.bottom = bottom + "px";
+            }, 40);
         }
         //console.log("Hej!" + counter);
         hero.style.bottom = bottom + "px";
@@ -30,9 +34,12 @@ document.addEventListener("keyup", function(e) { //only one key (ArrowUp) is nee
     console.log(e.key, hero);
     switch (e.key) {
         case "ArrowUp":
-            hero.classList.add("keyUp");
-            //console.log("hi");
-            goUp();
+            if (!isJumping) {
+                isJumping = true;
+                hero.classList.add("keyUp");
+                //console.log("hi");
+                goUp();
+            }
         break                
         };
     });

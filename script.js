@@ -10,6 +10,21 @@ let life = 3;
 
 let isJumping = false; // To only jump once.
 
+// function sound(src) { //code for sound, not working
+//   this.sound = document.createElement("audio");
+//   this.sound.src = src;
+//   this.sound.setAttribute("preload", "auto");
+//   this.sound.setAttribute("controls", "none");
+//   this.sound.style.display = "none";
+//   document.body.appendChild(this.sound);
+//   this.play = function(){
+//     this.sound.play();
+//   }
+//   this.stop = function(){
+//     this.sound.pause();
+//   }
+// }
+
 function goUp() {
   //Janne's code, jumping function for the hero
   counter = 0;
@@ -36,6 +51,8 @@ function goUp() {
     console.log(hero.style.bottom);
   }, 40);
 }
+
+
 
 // function moveLeft() { //Made moving block in js
 //   // const newEnemy = document.getElementById("enemy");

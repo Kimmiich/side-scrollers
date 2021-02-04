@@ -1,8 +1,5 @@
 let hero = document.getElementById("hero");
 let enemy = document.getElementById("enemy");
-window.onload=function(){
-  document.getElementById("overWorld").play();
-}
 const loserText = document.getElementById("loserText");
 const lifeValue = document.querySelector(".lifeValue");
 const scoreValue = document.querySelector(".scoreValue");
@@ -11,9 +8,11 @@ let counter = 0;
 let bottom = 0;
 let score = 0;
 let life = 3;
-
 let isJumping = false; // To only jump once.
-
+// function for sound when page loading 
+window.onload=function(){
+  document.getElementById("overWorld").play();
+}
 function goUp() {
   //Janne's code, jumping function for the hero
   counter = 0;
@@ -32,7 +31,7 @@ function goUp() {
           isJumping = false;
         }
         hero.style.bottom = bottom + "px";
-        console.log(hero.style.bottom);
+        //console.log(hero.style.bottom);
       }, 40);
     }
     //console.log("Hej!" + counter);
@@ -41,27 +40,10 @@ function goUp() {
   }, 40);
 }
 
-
-
-// function moveLeft() { //Made moving block in js
-//   // const newEnemy = document.getElementById("enemy");
-//   let pos = 0;
-//   let id = setInterval(frame, 1);
-//   function frame() {
-//     if(pos == 2000) {
-//       clearInterval(id);
-//   } else {
-//     pos++;
-//     enemy.style.right = pos + "px";
-//   }
-//   }
-// }
-// moveLeft();
-
 document.addEventListener("keyup", function (e) {
   //only one key (ArrowUp) is needed for this game
-  console.log(e.key, hero);
-  console.log(e);
+  //console.log(e.key, hero);
+  //console.log(e);
   switch (e.key) {
     case "ArrowUp":
       if (!isJumping) {
@@ -78,23 +60,21 @@ document.addEventListener("keyup", function (e) {
 });
 
 let lose = setInterval(function () {
- 
   //we set of 10 sec, where we check the position of both blocks and if the collide we set game to be over
-  let heroBottom = parseInt(
+let heroBottom = parseInt(
     window.getComputedStyle(hero).getPropertyValue("bottom")
-  ); //getComputedStyle - taking all css propeties for hero, with getPropertyValue we are specifically taking the value of "bottom".
-  let enemyLeft = parseInt(
+); //getComputedStyle - taking all css propeties for hero, with getPropertyValue we are specifically taking the value of "bottom".
+  
+let enemyLeft = parseInt(
     window.getComputedStyle(enemy).getPropertyValue("left")
-  );
+);
   //getComputedStyle - taking all css propeties for enemy, with getPropertyValue we are specifically taking the value of "left".
- 
-  if (enemyLeft < 160 && enemyLeft > 60 && heroBottom < 50) {
+  
+if (enemyLeft < 160 && enemyLeft > 60 && heroBottom < 50) {
      life--; 
-    //condition for checking the collision
-    
+    //condition for checking the collision 
     alert("you loses one life ,Now your life is : "+ life );
-    
-    console.log(life);
+    //console.log(life);
     lifeValue.innerHTML = life; 
  if (life == 0) {
     enemy.style.animation = "none"; 
@@ -104,16 +84,27 @@ let lose = setInterval(function () {
     loserText.innerHTML ="GAME OVER!";   
 }
 }
-else if (enemyLeft<=0  ){
-  console.log("score:",score);
-  score++
-    scoreValue.innerHTML = score;    
-}  
 }, 100);
-console.log(lose)
+let success=setInterval(function () {
+  //we set of 10 sec, where we check the position of both blocks and if the collide we set game to be over
+  let heroBottom = parseInt(
+    window.getComputedStyle(hero).getPropertyValue("bottom")
+  ); //getComputedStyle - taking all css propeties for hero, with getPropertyValue we are specifically taking the value of "bottom".
+  let enemyLeft = parseInt(
+    window.getComputedStyle(enemy).getPropertyValue("left")
+  );
+  if (enemyLeft<=0  ){
+    //console.log("score:",score);
+    score++
+    scoreValue.innerHTML = score;    
+  }
+}, 100);
+// function for sound when Game Over
+
 function gameOverAudio(){
   document.getElementById("gameover").play();
 }
+//function for pausing the sound befor game ends 
 function pauseAudio() {
   document.getElementById("overWorld").pause();
 }

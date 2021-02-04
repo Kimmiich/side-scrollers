@@ -13,7 +13,7 @@ body{
   position: absolute;
   bottom: 0px;
   left: 60px;
-  background-color: chartreuse;
+  background-color: rgb(39, 39, 51);
 }
 
 #enemy {
@@ -22,7 +22,7 @@ body{
   position: absolute;
   bottom: 0px;
   right: 0px;
-  background-color: coral;
+  background-color: purple;
   animation: move 3s infinite linear;
 }
 

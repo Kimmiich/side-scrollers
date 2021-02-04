@@ -72,7 +72,7 @@ body{
 
 .moveEnemy {
   position: relative;
-  animation: move 4s infinite linear;
+  animation: move 1s infinite linear;
 }
 
 @keyframes move {

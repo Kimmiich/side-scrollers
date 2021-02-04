@@ -81,6 +81,17 @@ document.addEventListener("keyup", function (e) {
 let lose = setInterval(function () {
 
   enemy.classList.add("moveEnemy");  
+  
+  enemy.style.animationDuration = "3s";
+
+  if (score > 2 && score < 4) {
+    console.log("score 2:",score);
+    enemy.style.animationDuration = "2s";
+
+  } else if (score > 5) {
+    console.log("score 3:",score);
+    enemy.style.animationDuration = "1s";
+  }
 
   //we set of 10 sec, where we check the position of both blocks and if the collide we set game to be over
   let heroBottom = parseInt(
@@ -113,6 +124,7 @@ let lose = setInterval(function () {
     } else if (enemyLeft <= 0) {
         console.log("score:",score);
         score++
+
         scoreValue.innerHTML = score;
         console.log("Move enemy back");
         enemy.classList.remove("moveEnemy");

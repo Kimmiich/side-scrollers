@@ -105,11 +105,11 @@ let lose = setInterval(function () {
 }
 }
 else if (enemyLeft<=0  ){
+  console.log("score:",score);
   score++
-    scoreValue.innerHTML = score; 
-   
+    scoreValue.innerHTML = score;    
 }  
-}, 40);
+}, 100);
 console.log(lose)
 function gameOverAudio(){
   document.getElementById("gameover").play();

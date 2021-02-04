@@ -1,6 +1,6 @@
 body{
   background-image: url(img/R5152b481afedbb64d14ffe32d4af8d06.png);
-  min-height:100vh;
+    min-height:100vh;
     width:100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,20 +47,28 @@ body{
 }
 .scoreValue{
   width: 30px;
-  font-size: 30px;
   color: block;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin: auto;
   padding: 20px;
   border: 2px solid black;
   text-align: center;
-  font-size: 1rem;
+  font-size: 2rem;
   position: absolute;
-  font-size: 30px;
   right:20px;
   top:20px;
   background-color: white;
   color: rgb(14, 13, 13);
+}
+#score{
+  text-align: right;
+  margin-right: 30px;
+  margin-top: 0;
+}
+#life{
+  text-align: center;
+  max-width: 50px;
+  margin: auto;
 }
 @keyframes move {
   0% {

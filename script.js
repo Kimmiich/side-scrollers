@@ -14,21 +14,6 @@ let life = 3;
 
 let isJumping = false; // To only jump once.
 
-// function sound(src) { //code for sound, not working
-//   this.sound = document.createElement("audio");
-//   this.sound.src = src;
-//   this.sound.setAttribute("preload", "auto");
-//   this.sound.setAttribute("controls", "none");
-//   this.sound.style.display = "none";
-//   document.body.appendChild(this.sound);
-//   this.play = function(){
-//     this.sound.play();
-//   }
-//   this.stop = function(){
-//     this.sound.pause();
-//   }
-// }
-
 function goUp() {
   //Janne's code, jumping function for the hero
   counter = 0;
@@ -111,36 +96,19 @@ let lose = setInterval(function () {
     
     console.log(life);
     lifeValue.innerHTML = life; 
-  
- 
  if (life == 0) {
-  
-    enemy.style.animation = "none";
-    hero.style.animation = "none"; 
-    
-    
+    enemy.style.animation = "none"; 
     alert("you lose");
     pauseAudio();
     gameOverAudio();
-    
-   
-    loserText.innerHTML ="GAME OVER!";
-    
-    
-    
+    loserText.innerHTML ="GAME OVER!";   
 }
-
 }
-else if (  enemyLeft<=0  ){
+else if (enemyLeft<=0  ){
   score++
     scoreValue.innerHTML = score; 
-  
-
-
-}
-
-
    
+}  
 }, 40);
 console.log(lose)
 function gameOverAudio(){

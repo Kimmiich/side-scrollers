@@ -1,7 +1,7 @@
 let hero = document.getElementById("hero");
 let enemy = document.getElementById("enemy");
 window.onload=function(){
-  document.getElementById("overWorld").play();
+document.getElementById("overWorld").play();
 }
 const loserText = document.getElementById("loserText");
 const lifeValue = document.querySelector(".lifeValue");
@@ -32,7 +32,7 @@ function goUp() {
           isJumping = false;
         }
         hero.style.bottom = bottom + "px";
-        console.log(hero.style.bottom);
+       // console.log(hero.style.bottom);
       }, 40);
     }
     //console.log("Hej!" + counter);
@@ -60,8 +60,8 @@ function goUp() {
 
 document.addEventListener("keyup", function (e) {
   //only one key (ArrowUp) is needed for this game
-  console.log(e.key, hero);
-  console.log(e);
+  // console.log(e.key, hero);
+  // console.log(e);
   switch (e.key) {
     case "ArrowUp":
       if (!isJumping) {
@@ -77,8 +77,11 @@ document.addEventListener("keyup", function (e) {
   }
 });
 
+
 let lose = setInterval(function () {
- 
+
+  enemy.classList.add("moveEnemy");  
+
   //we set of 10 sec, where we check the position of both blocks and if the collide we set game to be over
   let heroBottom = parseInt(
     window.getComputedStyle(hero).getPropertyValue("bottom")
@@ -88,32 +91,38 @@ let lose = setInterval(function () {
   );
   //getComputedStyle - taking all css propeties for enemy, with getPropertyValue we are specifically taking the value of "left".
  
-  if (enemyLeft < 160 && enemyLeft > 60 && heroBottom < 50) {
-     life--; 
-    //condition for checking the collision
-    
-    alert("you loses one life ,Now your life is : "+ life );
-    
-    console.log(life);
-    lifeValue.innerHTML = life; 
- if (life == 0) {
-    enemy.style.animation = "none"; 
-    alert("you lose");
-    pauseAudio();
-    gameOverAudio();
-    loserText.innerHTML ="GAME OVER!";   
-}
-}
-else if (enemyLeft<=0  ){
-  console.log("score:",score);
-  score++
-    scoreValue.innerHTML = score;    
-}  
-}, 100);
-console.log(lose)
-function gameOverAudio(){
-  document.getElementById("gameover").play();
-}
-function pauseAudio() {
-  document.getElementById("overWorld").pause();
-}
+    if (enemyLeft < 160 && enemyLeft > 60 && heroBottom < 50) {
+        life--; 
+        //condition for checking the collision
+        
+        alert("you loses one life, Now your life is : "+ life );
+        
+        console.log(life);
+        lifeValue.innerHTML = life; 
+
+        if (life == 0) {
+            enemy.style.animation = "none"; 
+            alert("you lose");
+            pauseAudio();
+            gameOverAudio();
+            loserText.innerHTML ="GAME OVER!";   
+        }
+
+      
+
+    } else if (enemyLeft <= 0) {
+        console.log("score:",score);
+        score++
+        scoreValue.innerHTML = score;
+        console.log("Move enemy back");
+        enemy.classList.remove("moveEnemy");
+        }  
+    }, 20);
+
+    console.log(lose)
+    function gameOverAudio(){
+    document.getElementById("gameover").play();
+    }
+    function pauseAudio() {
+    document.getElementById("overWorld").pause();
+    }

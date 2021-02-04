@@ -23,7 +23,6 @@ body{
   bottom: 0px;
   right: 0px;
   background-color: coral;
-  animation: move 3s infinite linear;
 }
 
 .lifeValue {
@@ -70,6 +69,12 @@ body{
   max-width: 50px;
   margin: auto;
 }
+
+.moveEnemy {
+  position: relative;
+  animation: move 4s infinite linear;
+}
+
 @keyframes move {
   0% {
     right: 0px;
